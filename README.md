@@ -16,49 +16,49 @@ postsAmount is less than 1 million.
 Posts amount: 10
 Get top10 using a heap of 10 items: 24495800ms
 Get top10 adding all posts to a heap: 510300ms
-The ratio of the first to the second is 0.02083214265302623
+The ratio of the second to the first is 0.02083214265302623
 ```
 
 ```
 Posts amount: 100
 Get top10 using a heap of 10 items: 22868700ms
 Get top10 adding all posts to a heap: 585600ms
-The ratio of the first to the second is 0.025607052434113
+The ratio of the second to the first is 0.025607052434113
 ```
 
 ```
 Posts amount: 1000
 Get top10 using a heap of 10 items: 28264700ms
 Get top10 adding all posts to a heap: 1459600ms
-The ratio of the first to the second is 0.05164038535700007
+The ratio of the second to the first is 0.05164038535700007
 ```
 
 ```
 Posts amount: 10000
 Get top10 using a heap of 10 items: 27301800ms
 Get top10 adding all posts to a heap: 4301500ms
-The ratio of the first to the second is 0.1575537144071087
+The ratio of the second to the first is 0.1575537144071087
 ```
 
 ```
 Posts amount: 100000
 Get top10 using a heap of 10 items: 38249500ms
 Get top10 adding all posts to a heap: 27437200ms
-The ratio of the first to the second is 0.7173217950561446
+The ratio of the second to the first is 0.7173217950561446
 ```
 
 ```
 Posts amount: 1000000
 Get top10 using a heap of 10 items: 47131600ms
 Get top10 adding all posts to a heap: 84436400ms
-The ratio of the first to the second is 1.791502940702204
+The ratio of the second to the first is 1.791502940702204
 ```
 
 ```
 Posts amount: 10000000
 Get top10 using a heap of 10 items: 148891700ms
 Get top10 adding all posts to a heap: 728556300ms
-The ratio of the first to the second is 4.893196195624068
+The ratio of the second to the first is 4.893196195624068
 ```
 So, **some methods are more suitable in some situations**, it all depends.
 

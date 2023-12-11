@@ -23,7 +23,7 @@ public class Top10 {
 
         System.out.println("Posts amount: " + postsAmount);
         System.out.println("Get top10 using a heap of 10 items: " + duration1 +
-                "ms\nGet top10 adding all posts to a heap: " + duration2 + "ms\nThe ratio of the first to the second is " +
+                "ms\nGet top10 adding all posts to a heap: " + duration2 + "ms\nThe ratio of the second to the first is " +
                 (double)duration2/duration1);
     }
 
@@ -41,7 +41,7 @@ public class Top10 {
         while (postsIterator.hasNext()) {
             var post = postsIterator.next();
             assert top10.peek() != null;
-            if (post.compareTo(top10.peek()) >= 0) {
+            if (post.compareTo(top10.peek()) > 0) {
                 top10.poll();
                 top10.add(post);
             }
