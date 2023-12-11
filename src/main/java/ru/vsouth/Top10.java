@@ -41,7 +41,7 @@ public class Top10 {
         while (postsIterator.hasNext()) {
             var post = postsIterator.next();
             assert top10.peek() != null;
-            if (post.compareTo(top10.peek()) > 0) {
+            if (post.compareTo(top10.peek()) >= 0) {
                 top10.poll();
                 top10.add(post);
             }
