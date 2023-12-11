@@ -9,10 +9,6 @@ public class Post implements Comparable<Post> {
         this.likesCount = likesCount;
     }
 
-    public Integer getLikesCount() {
-        return likesCount;
-    }
-
     @Override
     public String toString() {
         return "Post{" +

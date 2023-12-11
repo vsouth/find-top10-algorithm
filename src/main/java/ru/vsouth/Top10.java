@@ -6,9 +6,9 @@ public class Top10 {
     public static void main(String[] args) {
         var random = new Random();
         List<Post> posts = new ArrayList<>();
-        var postsAmount = 1000000;
+        var postsAmount = 1_000_000;
         for (var i = 0; i < postsAmount; i++) {
-            posts.add(new Post(generateString(), random.nextInt()));
+            posts.add(new Post(generateString(), random.nextInt(10000000)));
         }
         //System.out.println(posts);
         long startTime = System.nanoTime();
@@ -46,8 +46,11 @@ public class Top10 {
                 top10.add(post);
             }
         }
+
         var top10List = new ArrayList<Post>();
-        // add posts to the list in sorted order
+        /* add posts to the list in sorted order
+           https://stackoverflow.com/questions/25569625/sorting-priority-queue-in-java
+         */
         while (!top10.isEmpty()) {
             top10List.add(top10.poll());
         }
@@ -58,12 +61,18 @@ public class Top10 {
     public static List<Post> getTop10AddAllToPriorityQueue(List<Post> posts) {
         /*
          reverse order - max amount is in the head of pq
-         otherwise, pq might look like this -
+         otherwise, PriorityQueue might look like this:
+         [1, 11, 23, 24, 12, 36, 41, 53, 85, 61, 20, 68, 57, 62, 65,
+         83, 73, 88, 97, 70, 63, 66, 90, 90, 83, 94, 89, 93, 63, 69]
+         and it would be hard to find max items:
+         [83, 83, 85, 88, 89, 90, 90, 93, 94, 97]
+         without iterating through the whole queue calling poll() method
          */
         var pq = new PriorityQueue<Post>(Collections.reverseOrder());
         pq.addAll(posts);
         var res = new ArrayList<Post>();
-        // add posts to the list in sorted order
+        /* add posts to the list in sorted order
+         */
         for (var i = 0; i < 10; i++) {
             res.add(pq.poll());
         }
